@@ -27,6 +27,8 @@ namespace BMI_kalkylator
                 }
             }
 
+
+
             // Fråga om träning
             Console.WriteLine("Gillar du att träna? (Tryck 1 = Ja, Tryck 2 = Nej)");
             string träna = Console.ReadLine();
@@ -62,6 +64,19 @@ namespace BMI_kalkylator
 
             if (svar == "ja" || svar == "j")
             {
+                // --- Exempel på att anropa BMI-metoden på olika sätt ---
+                // 1. Vanligt anrop (metric, default)
+                double bmi1 = CalculateBMI(70, 1.75);
+                Console.WriteLine($"BMI (metric, default): {bmi1:F2}");
+
+                // 2. Namngivna argument i annan ordning
+                double bmi2 = CalculateBMI(height: 1.80, weight: 85);
+                Console.WriteLine($"BMI (metric, named args): {bmi2:F2}");
+
+                // 3. Namngivna argument + explicit enhet
+                double bmi3 = CalculateBMI(unit: "imperial", weight: 180, height: 70);
+                Console.WriteLine($"BMI (imperial): {bmi3:F2}"); 
+
                 // Lägg till instruktioner om hur man skriver in värden
                 Console.WriteLine("För att räkna ut ditt BMI:");
                 Console.WriteLine("1. För vikt, ange i kilogram (t.ex. 70)");
